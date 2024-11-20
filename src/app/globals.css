@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* globals.css */
+body {
+  background-color: black; /* Match the initial background color of your page */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
 .text-bg {
     @apply bg-gradient-to-b from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent;
