@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-bg {
+    @apply bg-gradient-to-b from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent;
+  }
+
+  .custom-gradient {
+    background: radial-gradient(circle, #dbe09ebd 5%, #8c990091 90%, black 5%);
+  }
+  
