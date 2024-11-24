@@ -15,7 +15,7 @@ import box1 from "../../../public/about-us/box1.png";
 import box2 from "../../../public/about-us/box2.png";
 import box3 from "../../../public/about-us/box3.png";
 import page from "../../../public/about-us/page.png";
-
+import { f1, f2 } from "../fonts";
 export default function Page() {
   const [isLoaded, setIsLoaded] = useState(false);
   const scrollRef = useRef(null);
@@ -55,7 +55,7 @@ export default function Page() {
   const founders = [
     { name: "Jaiman Soni", role: "Co-founder" },
     { name: "Swabhiman Nanda", role: "Co-founder" },
-    { name: "Vimarh Tiwari", role: "Co-founder" },
+    { name: "Vimarsh Tiwari", role: "Co-founder" },
     { name: "Jenish Soni", role: "Co-founder" },
   ];
 
@@ -81,30 +81,31 @@ export default function Page() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0 }}
       >
         <motion.div
-          className="min-h-screen bg-no-repeat bg-cover bg-center flex justify-center items-center px-4 sm:px-6 md:px-8"
+          className="max-lg:min-h-[700px]  min-h-screen bg-no-repeat max-lg:bg-contain bg-cover bg-center flex justify-center items-center px-4 sm:px-6 md:px-8"
           style={{
             backgroundImage: `url(${pic1.src})`,
-            y: yBg,
+
             opacity: opacity,
           }}
         >
           <motion.div
-            className="text-white text-center flex flex-col gap-4 sm:gap-6 md:gap-8"
+            className="text-white text-center flex flex-col gap-2 sm:gap-6 md:gap-8"
             variants={staggerChildren}
             initial="initial"
             animate={isLoaded ? "animate" : "initial"}
           >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight drop-shadow-[0_0_40px_rgba(255,255,255,0.6)]"
+              className={`  text-[70px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl  leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight drop-shadow-[0_0_40px_rgba(255,255,255,0.4)] lg:drop-shadow-[0_0_40px_rgba(255,255,255,0.6)] ${f1.className} `}
               variants={fadeInUp}
             >
-              we make tech <br /> feel better.
+              we make tech <br />{" "}
+              <span className={`font-semibold italic`}>feel better.</span>
             </motion.h1>
             <motion.p
-              className="text-[#EBFF00] text-sm sm:text-base md:text-lg lg:text-xl"
+              className={`text-[#EBFF00] text-[17px] sm:text-base md:text-lg lg:text-xl ${f1.className}`}
               variants={fadeInUp}
             >
               We're a web product company focused on design-driven,{" "}
@@ -116,7 +117,7 @@ export default function Page() {
 
         <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <motion.div
-            className="flex items-center gap-2 sm:gap-3 md:gap-4"
+            className="flex items-center  md:gap-2"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -132,7 +133,9 @@ export default function Page() {
                 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
               />
             </motion.div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl text-bg">
+            <h2
+              className={`${f1.className} text-xl sm:text-2xl md:text-3xl text-bg `}
+            >
               Gradient Text
             </h2>
           </motion.div>
@@ -144,7 +147,9 @@ export default function Page() {
             whileInView="animate"
             viewport={{ once: true, amount: 0.1 }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 ${f1.className}`}
+            >
               {boxes.map((box, index) => (
                 <motion.div
                   key={index}
@@ -176,10 +181,10 @@ export default function Page() {
                       <Image
                         src={box.image}
                         alt={box.alt}
-                        className="w-24 sm:w-32 md:w-40"
+                        className="w-[160px] sm:w-32 md:w-40"
                       />
                     </motion.div>
-                    <p className="text-center text-white text-sm sm:text-base md:text-lg lg:text-xl">
+                    <p className="text-center font-extralight text-white text-sm sm:text-base md:text-lg lg:text-xl">
                       {box.text}
                     </p>
                   </div>
@@ -189,22 +194,14 @@ export default function Page() {
           </motion.div>
 
           <motion.div
-            className="flex justify-center mt-16 sm:mt-24 md:mt-32"
+            className={`flex justify-center mt-16 sm:mt-24 md:mt-32 ${f2.className}`}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.6, -0.05, 0.01, 0.99] }}
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2
-              className="drop-shadow-[0_0_40px_rgba(235,255,0,0.7)] text-4xl sm:text-5xl md:text-6xl lg:text-[170px] xl:text-[170px] my-[60px] text-center"
-              animate={{
-                textShadow: [
-                  "0 0 40px rgba(235,255,0,0.4)",
-                  "0 0 40px rgba(235,255,0,0.7)",
-                  "0 0 40px rgba(235,255,0,0.4)",
-                ],
-              }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className={`drop-shadow-[0_0_40px_rgba(245,245,0,6.9)] text-7xl sm:text-6xl md:text-[200px] lg:text-[170px] xl:text-[170px] my-[60px] text-center ${f2.className}`}
             >
               glint for you
             </motion.h2>
@@ -212,13 +209,13 @@ export default function Page() {
         </div>
 
         <motion.div
-          className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32"
+          className={`w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32 ${f1.className}`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+          <div className="flex items-center sm:gap-2 md:gap-2">
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
@@ -246,13 +243,13 @@ export default function Page() {
         </motion.div>
 
         <motion.div
-          className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32"
+          className={`${f1.className} w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+          <div className="flex items-center sm:gap-2 md:gap-2">
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
@@ -269,7 +266,7 @@ export default function Page() {
           </div>
 
           <motion.div
-            className="text-[#EBFF00] text-sm sm:text-base md:text-lg lg:text-xl mt-4 sm:mt-6 md:mt-8"
+            className="text-[#EBFF00]  sm:text-base md:text-lg lg:text-4xl tracking-wide lg:leading-[50px] lg:tracking-wide mt-4 sm:mt-6 md:mt-8"
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -287,7 +284,7 @@ export default function Page() {
         </motion.div>
 
         <motion.div
-          className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32 pb-16 sm:pb-24 md:pb-32"
+          className={`${f1.className} w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-16 sm:mt-24 md:mt-32 pb-16 sm:pb-24 md:pb-32`}
           variants={staggerChildren}
           initial="initial"
           whileInView="animate"
@@ -326,6 +323,7 @@ export default function Page() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
                   >
+                  
                     {founder.role}
                   </motion.p>
                 </div>

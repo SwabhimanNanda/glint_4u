@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Page() {
   const pathname = usePathname();
@@ -13,7 +13,9 @@ export default function Page() {
         <Link
           href="/home"
           className={`text-[16px] font-medium w-full text-center bg-[#8c8c8c62] h-[80%] rounded-[40px] flex justify-center items-center  ${
-            pathname === '/home' ? 'text-gray-200 border-[0.5px] border-gray-400/50' : 'bg-[#8c8c8c62]'
+            pathname === "/home"
+              ? "text-gray-200 border-[0.5px] border-gray-400/50"
+              : "bg-[#8c8c8c62]"
           }`}
         >
           Home
@@ -21,7 +23,9 @@ export default function Page() {
         <Link
           href="/work"
           className={`text-[16px] font-medium w-full text-center bg-[#8c8c8c62] h-[80%] rounded-[40px] flex justify-center items-center  ${
-            pathname === '/work' ? 'text-gray-200 border-[0.5px] border-gray-400/50' : 'bg-[#8c8c8c62]'
+            pathname === "/work"
+              ? "text-gray-200 border-[0.5px] border-gray-400/50"
+              : "bg-[#8c8c8c62]"
           }`}
         >
           Work
